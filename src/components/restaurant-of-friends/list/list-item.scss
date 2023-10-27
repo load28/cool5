@@ -1,0 +1,12 @@
+.card {
+  @apply
+  flex
+  box-border
+  border-2
+  border-gray-200
+  rounded-lg
+  px-4
+  py-2
+  sm:max-h-60
+  md:max-h-60;
+}

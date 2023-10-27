@@ -1,0 +1,30 @@
+.input-wrap {
+  @apply
+  inline-flex
+  flex-nowrap
+  relative
+  box-border
+  h-10
+  lg:h-8
+  text-sm
+  font-medium
+  bg-white
+  rounded-xl
+  gap-1
+  px-2.5
+  text-left
+  text-gray-700
+  border-2
+  border-gray-400
+  focus-within:border-gray-600;
+
+  input {
+    @apply
+    box-border
+    flex-grow
+    min-w-0
+    px-1
+    bg-transparent
+    outline-0;
+  }
+}
