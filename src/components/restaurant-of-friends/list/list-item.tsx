@@ -1,12 +1,12 @@
-import { PropsWithoutRef } from 'react';
 import './list-item.scss';
+
 import { Restaurant } from './list.tsx';
 
 interface ListItemProps {
   restaurant: Restaurant;
 }
 
-const ListItem = ({ restaurant }: PropsWithoutRef<ListItemProps>) => {
+const ListItem: React.FC<ListItemProps> = ({ restaurant }) => {
   return (
     <div className="card sm:flex-col">
       <div className="flex flex-1 lg:flex-auto flex-col min-w-0">

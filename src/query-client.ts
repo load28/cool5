@@ -6,6 +6,7 @@ export interface QueryClientParams {
 
 export const getClient = (() => {
   let client: QueryClient | null = null;
+
   return () => {
     if (client) {
       return client;

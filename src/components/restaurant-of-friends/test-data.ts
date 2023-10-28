@@ -1,4 +1,5 @@
-import { Restaurant } from './list/List.tsx';
+import { Restaurant } from './list/list.tsx';
+
 
 export const list: Restaurant[] = [
   {

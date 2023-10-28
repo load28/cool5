@@ -1,11 +1,10 @@
-import { PropsWithoutRef } from 'react';
 import './Header.scss';
 
 interface HeaderProps {
   setSearchKeyword: (keyword: string) => void;
 }
 
-const Header = ({ setSearchKeyword }: PropsWithoutRef<HeaderProps>) => {
+const Header: React.FC<HeaderProps> = ({ setSearchKeyword }) => {
   const onKeyworkdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchKeyword(e.target.value);
   };
