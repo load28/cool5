@@ -20,9 +20,10 @@ interface ListProps {
   searchKeyword: string;
 }
 
+
 const List: React.FC<ListProps> = ({ searchKeyword }) => {
   const items = list.filter((restaurant) => {
-    return restaurant.name.includes(searchKeyword);
+    return restaurant.name.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase());
   });
 
   if (items.length === 0) {
