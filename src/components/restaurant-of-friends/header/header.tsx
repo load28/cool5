@@ -1,14 +1,10 @@
 import './Header.scss';
 
-interface HeaderProps {
-  setSearchKeyword: (keyword: string) => void;
-}
+interface HeaderProps {}
 
-const Header: React.FC<HeaderProps> = ({ setSearchKeyword }) => {
-  const onKeyworkdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchKeyword(e.target.value);
-  };
- 
+const Header: React.FC<HeaderProps> = () => {
+  const onKeyworkdChange = (e: React.ChangeEvent<HTMLInputElement>) => {};
+
   return (
     <>
       <div className="sticky top-0 flex flex-col bg-white gap-6 lg:flex-row lg:justify-between items-center px-4 py-6 after:content-[''] after:absolute after:bottom-0 after:left-0 after:border-b-2 after:border-gray-700 after:min-w-full">

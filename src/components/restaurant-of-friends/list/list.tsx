@@ -1,3 +1,5 @@
+import { useQuery } from 'react-query';
+import { QueryKeys } from '../../../query-client.ts';
 import { list } from '../test-data.ts';
 import ListItem from './list-item.tsx';
 import SearchEmpty from './search-empty.tsx';
@@ -16,25 +18,27 @@ export interface Restaurant {
   authorId: string;
 }
 
-interface ListProps {
-  searchKeyword: string;
-}
-
-
-const List: React.FC<ListProps> = ({ searchKeyword }) => {
-  const items = list.filter((restaurant) => {
-    return restaurant.name.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase());
+const List: React.FC = () => {
+  const { data } = useQuery<Restaurant[]>(QueryKeys.RESTAURANTS, () => {
+    return list;
   });
 
-  if (items.length === 0) {
-    return <SearchEmpty message={`${searchKeyword}에 대한 결과가 없음`}/>;
+  // const items = list.filter((restaurant) => {
+  //   // return restaurant.name.toLocaleLowerCase().includes(searchKeyword.toLocaleLowerCase());
+  //   return true;
+  // });
+
+  if (!data || data.length === 0) {
+    return <SearchEmpty message={`에 대한 결과가 없음`} />;
   }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-6">
-      {items.map((restaurant) => <ListItem key={restaurant.id} restaurant={restaurant}></ListItem>)}
+      {data.map((restaurant) => (
+        <ListItem {...restaurant} key={restaurant.id}></ListItem>
+      ))}
     </div>
-  )
+  );
 };
 
 export default List;
