@@ -7,7 +7,6 @@ const Header: React.FC<HeaderProps> = () => {
   const updateSearchKeyword = useSearchKeywordStore((state) => state.updateSearchKeyword);
 
   const onKeyworkdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     updateSearchKeyword(e.target.value);
   };
 
