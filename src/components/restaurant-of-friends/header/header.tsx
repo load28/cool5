@@ -1,5 +1,6 @@
 import { useSearchKeywordStore } from '../../../store/search-keyword';
 import './Header.scss';
+import UserIcon from './user-icon';
 
 interface HeaderProps {}
 
@@ -19,6 +20,7 @@ const Header: React.FC<HeaderProps> = () => {
         <span className="input-wrap w-full lg:max-w-fit">
           <input placeholder="search" onChange={onKeyworkdChange} />
         </span>
+        <UserIcon />
       </div>
     </>
   );
