@@ -1,9 +1,14 @@
+import { useSearchKeywordStore } from '../../../store/search-keyword';
 import './Header.scss';
 
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
-  const onKeyworkdChange = (e: React.ChangeEvent<HTMLInputElement>) => {};
+  const updateSearchKeyword = useSearchKeywordStore((state) => state.updateSearchKeyword);
+
+  const onKeyworkdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    updateSearchKeyword(e.target.value);
+  };
 
   return (
     <>
