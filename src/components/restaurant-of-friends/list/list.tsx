@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import { QueryKeys } from '../../../query-client.ts';
-import { useSearchKeywordStore } from '../../../store/search-keyword.ts';
+import { useSearchKeywordStore } from '../../../stores/search-keyword.ts';
 import { list } from '../test-data.ts';
 import ListItem from './list-item.tsx';
 import SearchEmpty from './search-empty.tsx';
