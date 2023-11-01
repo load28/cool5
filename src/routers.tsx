@@ -1,5 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import GlobalLayout from './pages/_layout';
+import Auth from './pages/auth/index.tsx';
 import RedstaurnatId from './pages/restaurant-of-friends/[id].tsx';
 import RestaurantOfFriendsIndex from './pages/restaurant-of-friends/index.tsx';
 import { useUserStore } from './stores/user.ts';
@@ -17,11 +18,14 @@ export const routes = [
   {
     path: '/',
     element: <GlobalLayout />,
-    loader: loader,
     children: [
       {
         path: '',
-        element: <Navigate to={'/feed'} />,
+        element: <Navigate to={'/auth'} />,
+      },
+      {
+        path: '/auth',
+        element: <Auth />,
       },
       {
         path: '/feed',
