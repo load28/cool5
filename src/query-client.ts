@@ -39,4 +39,6 @@ export const graphqlFetcher = (query: RequestDocument, variables = {}) =>
 
 export const QueryKeys = {
   RESTAURANTS: 'RESTAURANTS',
+  AUTH_INFO: 'AUTH_INFO',
+  USER_INFO: 'USER_INFO',
 };
