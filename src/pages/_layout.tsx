@@ -21,15 +21,17 @@ const Layout: React.FC = () => {
   if (!userInfo) return <div>로딩중</div>;
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="sm:max-w-4xl px-6 w-full bg-white">
-        <Header></Header>
-        <div className="mt-4 lg:mt-16"></div>
-        <div className="mt-4 lg:mt-16">
-          <Outlet />
+    <React.Suspense fallback={<div>Loading</div>}>
+      <div className="flex flex-col items-center">
+        <div className="sm:max-w-4xl px-6 w-full bg-white">
+          <Header></Header>
+          <div className="mt-4 lg:mt-16"></div>
+          <div className="mt-4 lg:mt-16">
+            <Outlet />
+          </div>
         </div>
       </div>
-    </div>
+    </React.Suspense>
   );
 };
 
