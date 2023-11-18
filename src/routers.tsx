@@ -40,6 +40,10 @@ export const routes = createBrowserRouter([
     path: '/auth',
     element: <AuthIndex />,
   },
+  {
+    path: '/auth/callback',
+    element: <Navigate to={'/'} />,
+  },
 ]);
 
 export const pages = [{ route: '/' }, { route: '/feed' }, { route: '/feed/:id' }];

@@ -28,7 +28,12 @@ async function signInWithKaKao() {
   const supabase = useSupabase();
   const {
     data: { user: userInfo },
-  } = (await supabase.auth.signInWithOAuth({ provider: 'kakao' })) as any;
+  } = (await supabase.auth.signInWithOAuth({
+    provider: 'kakao',
+    options: {
+      redirectTo: '/auth/callback',
+    },
+  })) as any;
 
   return userInfo;
 }

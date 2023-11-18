@@ -11,9 +11,7 @@ const Auth = () => {
     if (user) {
       navigate('/');
     } else {
-      signInWithKaKao().then(() => {
-        navigate('/');
-      });
+      signInWithKaKao().then();
     }
   }, []);
 
