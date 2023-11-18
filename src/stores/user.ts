@@ -17,6 +17,6 @@ export const useUserStore = create<UserStore>((set) => {
   return {
     user: undefined,
     updateUser: (user: User) => set((state) => ({ ...state, user })),
-    deleteUser: () => set({ user: undefined }),
+    deleteUser: () => set((state) => ({ ...state, user: undefined })),
   };
 });

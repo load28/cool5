@@ -5,21 +5,14 @@ import { signInWithKaKao } from './supabase';
 
 const Auth = () => {
   const navigate = useNavigate();
-  const updateUser = useUserStore((state) => state.updateUser);
   const user = useUserStore((state) => state.user);
 
   useEffect(() => {
     if (user) {
-      navigate('/feed');
+      navigate('/');
     } else {
-      signInWithKaKao().then((userInfo: any) => {
-        updateUser({
-          id: userInfo.id,
-          email: userInfo.email,
-          name: userInfo.user_metadata.full_name,
-          profileImageUrl: userInfo.user_metadata.avatar_url,
-        });
-        navigate('/feed');
+      signInWithKaKao().then(() => {
+        navigate('/');
       });
     }
   }, []);

@@ -1,21 +1,25 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import GlobalLayout from './pages/_layout';
-import Auth from './pages/auth/index.tsx';
+import AuthIndex from './pages/auth/index.tsx';
+import { getSessionUser } from './pages/auth/supabase.ts';
+import LoginIndex from './pages/login/index.tsx';
 import RedstaurnatId from './pages/restaurant-of-friends/[id].tsx';
 import RestaurantOfFriendsIndex from './pages/restaurant-of-friends/index.tsx';
 
-export const routes = [
+export const routes = createBrowserRouter([
   {
     path: '/',
+    loader: async () => {
+      const userInfo = await getSessionUser();
+      return {
+        userInfo,
+      };
+    },
     element: <GlobalLayout />,
     children: [
       {
-        path: '',
-        element: <Navigate to={'/auth'} />,
-      },
-      {
-        path: '/auth',
-        element: <Auth />,
+        path: '/',
+        element: <Navigate to={'/feed'} />,
       },
       {
         path: '/feed',
@@ -28,6 +32,14 @@ export const routes = [
       },
     ],
   },
-];
+  {
+    path: '/login',
+    element: <LoginIndex />,
+  },
+  {
+    path: '/auth',
+    element: <AuthIndex />,
+  },
+]);
 
 export const pages = [{ route: '/' }, { route: '/feed' }, { route: '/feed/:id' }];

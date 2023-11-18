@@ -6,16 +6,18 @@ import './user-icon.scss';
 const UserIcon = () => {
   const supabase = useSupabase();
   const navigate = useNavigate();
-
+  const deleteUser = useUserStore((state) => state.deleteUser);
   const user = useUserStore((state) => state.user);
-  // oauth 요청 URL
+
   const handleLogin = () => {
     navigate('/auth');
   };
 
   const singOut = () => {
-    supabase.auth.signOut();
-    navigate('/feed');
+    supabase.auth.signOut().then(() => {
+      deleteUser();
+      navigate('/login');
+    });
   };
 
   if (!user) {
