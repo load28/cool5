@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = () => {
         <span className="text-left text-4xl tracking-tight color-gray-700 lg:leading-8">
           Share place
         </span>
-        <div className="flex items-center gap-x-2">
+        <div className="flex items-center gap-x-4">
           <span className="input-wrap w-full lg:max-w-fit">
             <input placeholder="search" onChange={onKeyworkdChange} />
           </span>

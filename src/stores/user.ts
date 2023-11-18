@@ -3,7 +3,7 @@ import { create } from 'zustand';
 export interface User {
   id: string;
   name: string;
-  email: string;
+  email?: string;
   profileImageUrl: string;
 }
 
@@ -16,7 +16,7 @@ interface UserStore {
 export const useUserStore = create<UserStore>((set) => {
   return {
     user: undefined,
-    updateUser: (user: User) => set({ user: user }),
+    updateUser: (user: User) => set((state) => ({ ...state, user })),
     deleteUser: () => set({ user: undefined }),
   };
 });
