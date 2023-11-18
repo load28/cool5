@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Navigate, Outlet, useLoaderData } from 'react-router-dom';
 import Header from '../components/restaurant-of-friends/header/header';
 import { useUserStore } from '../stores/user';
 
@@ -17,6 +17,10 @@ const Layout: React.FC = () => {
       });
     }
   }, [userInfo]);
+
+  if (!userInfo) {
+    return <Navigate to={'/login'} />;
+  }
 
   return (
     <div className="flex flex-col items-center">
