@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useSupabase } from '../../../auth-client';
+import { useSupabase } from '../../../pages/auth/supabase';
 import { useUserStore } from '../../../stores/user';
 import './user-icon.scss';
 
