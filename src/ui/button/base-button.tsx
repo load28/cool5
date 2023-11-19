@@ -9,6 +9,24 @@ export interface IBaseButtonProps extends IButtonProps {
   variantClassName?: string;
 }
 
+export interface IBaseButtonClassNames {
+  root?: string;
+  flexContainer?: string;
+  textContainer?: string;
+  label?: string;
+  description?: string;
+  screenReaderText?: string;
+}
+
+export const ButtonGlobalClassNames = {
+  shButton: 'sh-Button',
+  shButtonLabel: 'sh-Button-label',
+  shButtonDescription: 'sh-Button-description',
+  shButtonScreenReaderText: 'sh-Button-screenReaderText',
+  shButtonFlexContainer: 'sh-Button-flexContainer',
+  shButtonTextContainer: 'sh-Button-textContainer',
+};
+
 class BaseButton extends React.Component<IBaseButtonProps> {
   private static defaultProps: Partial<IBaseButtonProps> = {
     baseClassName: 'sh-button',
