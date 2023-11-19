@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { Navigate, Outlet, useLoaderData } from 'react-router-dom';
 import Header from '../components/restaurant-of-friends/header/header';
 import { useUserStore } from '../stores/user';
+import { ISupabaseUser } from './auth/supabase-types';
 
 const Layout: React.FC = () => {
   const updateUser = useUserStore((state) => state.updateUser);
-  const { userInfo } = useLoaderData() as { userInfo: any };
+  const { userInfo } = useLoaderData() as { userInfo: ISupabaseUser };
 
   useEffect(() => {
     if (userInfo) {

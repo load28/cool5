@@ -25,9 +25,9 @@ class BaseButton extends React.Component<IBaseButtonProps> {
     super(props);
     initializeComponentRef(this);
 
-    this._labelId = getId();
-    this._descriptionId = getId();
-    this._ariaDescriptionId = getId();
+    // this._labelId = getId();
+    // this._descriptionId = getId();
+    // this._ariaDescriptionId = getId();
   }
 
   render() {
@@ -45,8 +45,6 @@ class BaseButton extends React.Component<IBaseButtonProps> {
       toggle,
       text,
     } = { ...BaseButton.defaultProps, ...this.props };
-    console.log(this._buttonElement);
-    console.log(this._mergedRef);
 
     return <button type="button">{text}</button>;
   }

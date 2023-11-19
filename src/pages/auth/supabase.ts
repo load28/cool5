@@ -1,4 +1,5 @@
-import { createClient } from '@supabase/supabase-js';
+import { OAuthResponse, createClient } from '@supabase/supabase-js';
+import { ISupabaseUser } from './supabase-types';
 
 const useSupabase = (() => {
   let client: ReturnType<typeof createClient>;
@@ -15,27 +16,21 @@ const useSupabase = (() => {
   };
 })();
 
-async function getSessionUser() {
+async function getSessionUser(): Promise<ISupabaseUser | undefined> {
   const supabase = useSupabase();
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
+  const { data } = await supabase.auth.getSession();
 
-  return session ? session.user : undefined;
+  return data.session?.user || undefined;
 }
 
-async function signInWithKaKao() {
+async function signInWithKaKao(): Promise<OAuthResponse> {
   const supabase = useSupabase();
-  const {
-    data: { user: userInfo },
-  } = (await supabase.auth.signInWithOAuth({
+  return await supabase.auth.signInWithOAuth({
     provider: 'kakao',
     options: {
       redirectTo: '/auth/callback',
     },
-  })) as any;
-
-  return userInfo;
+  });
 }
 
 export { getSessionUser, signInWithKaKao, useSupabase };
