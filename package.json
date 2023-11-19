@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fluentui/merge-styles": "^8.5.13",
     "@supabase/supabase-js": "^2.38.4",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",

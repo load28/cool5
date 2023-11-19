@@ -1,5 +1,6 @@
 import React from 'react';
 import { createMergedRef } from '../utilities/createMergedRef';
+import { getId } from '../utilities/getId';
 import { initializeComponentRef } from '../utilities/initializeComponentRef';
 import { IButtonProps } from './button-types';
 
@@ -25,9 +26,9 @@ class BaseButton extends React.Component<IBaseButtonProps> {
     super(props);
     initializeComponentRef(this);
 
-    // this._labelId = getId();
-    // this._descriptionId = getId();
-    // this._ariaDescriptionId = getId();
+    this._labelId = getId();
+    this._descriptionId = getId();
+    this._ariaDescriptionId = getId();
   }
 
   render() {
@@ -45,6 +46,9 @@ class BaseButton extends React.Component<IBaseButtonProps> {
       toggle,
       text,
     } = { ...BaseButton.defaultProps, ...this.props };
+
+    const renderAsAnchor: boolean = !!href;
+    const tag = renderAsAnchor ? 'a' : 'button';
 
     return <button type="button">{text}</button>;
   }
