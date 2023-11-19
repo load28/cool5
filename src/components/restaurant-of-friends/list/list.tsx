@@ -21,15 +21,19 @@ export interface Restaurant {
 
 const List: React.FC = () => {
   const searchKeyword = useSearchKeywordStore((state) => state.searchKeyword);
-  const { data } = useQuery<Restaurant[]>(QueryKeys.RESTAURANTS, () => {
+  const { data, isLoading } = useQuery<Restaurant[]>(QueryKeys.RESTAURANTS, () => {
     return list;
   });
 
-  const filteredData = data?.filter((restaurant) => {
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  const filteredData = data!.filter((restaurant) => {
     return restaurant.name.toLowerCase().includes(searchKeyword.toLowerCase());
   });
 
-  if (!filteredData || filteredData.length === 0) {
+  if (searchKeyword && filteredData.length === 0) {
     return <SearchEmpty message={`${searchKeyword}에 대한 결과가 없습니다`} />;
   }
 
