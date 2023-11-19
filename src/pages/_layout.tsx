@@ -28,7 +28,7 @@ const Layout: React.FC = () => {
       <div className="sm:max-w-4xl px-6 w-full bg-white">
         <Header></Header>
         <div className="mt-4 lg:mt-16"></div>
-        <div className="mt-4 lg:mt-16">
+        <div className="mt-4 lg:mt-16 sh-content">
           <Outlet />
         </div>
       </div>

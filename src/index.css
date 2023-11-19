@@ -1,3 +1,13 @@
 @import 'tailwindcss/base.css';
 @import 'tailwindcss/components.css';
 @import 'tailwindcss/utilities.css';
+
+body {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.sh-content {
+  overflow: auto;
+  height: calc(100vh - 178px);
+}
