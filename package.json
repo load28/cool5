@@ -12,10 +12,12 @@
   "dependencies": {
     "@fluentui/merge-styles": "^8.5.13",
     "@supabase/supabase-js": "^2.38.4",
+    "bootstrap-icons": "^1.11.2",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.48.2",
     "react-query": "^3.39.3",
     "zustand": "^4.4.4"
   },

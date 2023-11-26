@@ -2,6 +2,7 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 import GlobalLayout from './pages/_layout';
 import AuthIndex from './pages/auth/index.tsx';
 import { getSessionUser } from './pages/auth/supabase.ts';
+import CreateShare from './pages/create-share/index.tsx';
 import LoginIndex from './pages/login/index.tsx';
 import RedstaurnatId from './pages/restaurant-of-friends/[id].tsx';
 import RestaurantOfFriendsIndex from './pages/restaurant-of-friends/index.tsx';
@@ -29,6 +30,10 @@ export const routes = createBrowserRouter([
       {
         path: '/feed/:id',
         element: <RedstaurnatId />,
+      },
+      {
+        path: '/feed/create_share',
+        element: <CreateShare />,
       },
     ],
   },
