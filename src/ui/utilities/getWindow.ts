@@ -18,7 +18,7 @@ try {
  * pass in an element hosted within the popup.
  */
 export function getWindow(rootElement?: Element | null): Window | undefined {
-  if (!canUseDOM() || typeof _window === 'undefined') {
+  if (!canUseDOM(_window) || typeof _window === 'undefined') {
     return undefined;
   } else {
     const el = rootElement as Element;

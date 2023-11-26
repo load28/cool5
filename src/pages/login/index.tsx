@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUserStore } from '../../stores/user';
-import BaseButton from '../../ui/button/base-button';
+import './login.scss';
 
 const LoginIndex: React.FC = () => {
   const user = useUserStore((state) => state.user);
@@ -18,9 +18,10 @@ const LoginIndex: React.FC = () => {
   };
 
   return (
-    <div>
-      <button onClick={loginHandelder}>Kakao login</button>
-      <BaseButton text="Kakao login" />
+    <div className="login-page">
+      <button className="kakao-login-btn" onClick={loginHandelder}>
+        Kakao login
+      </button>
     </div>
   );
 };

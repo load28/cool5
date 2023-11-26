@@ -1,3 +1,3 @@
-export function canUseDOM(): boolean {
-  return typeof window !== 'undefined' && !!(window.document && window.document.createElement);
+export function canUseDOM(_window: Window | undefined): boolean {
+  return typeof _window !== 'undefined' && !!(_window.document && _window.document.createElement);
 }
