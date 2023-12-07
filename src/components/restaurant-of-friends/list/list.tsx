@@ -65,27 +65,21 @@ const ListContent: React.FC<ListContentProps> = ({ filteredData, onShareHandler 
   </div>
 );
 
-type CreateShare = {
-  type: 'createShare';
-  queryString: {
-    params1: string;
-    params2: string;
-  };
+type RouteInfo<T, Q> = {
+  type: T;
+  queryString: Q;
 };
 
-type CreateShare2 = {
-  type: 'createShare2';
-  queryString: {
-    params3: string;
-    params4: string;
-  };
-};
+type CreateShare = RouteInfo<'createShare', Partial<{ params1: string; params2: string }>>;
+type CreateShare2 = RouteInfo<'createShare2', { params3: string; params4: string }>;
+type CreateShare3 = RouteInfo<'createShare3', { params5: string; params6: string }>;
 
-type NavigationAction = CreateShare | CreateShare2;
+type NavigationAction = CreateShare | CreateShare2 | CreateShare3;
 
 const NAVIGATION_ACTIONS: Record<NavigationAction['type'], string> = {
   createShare: '/feed/create_share',
   createShare2: '/feed/create_share',
+  createShare3: '/feed/create_share',
 };
 
 const useAppNavigatorr = () => {
