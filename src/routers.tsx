@@ -12,6 +12,8 @@ export const routes = createBrowserRouter([
     path: '/',
     loader: async () => {
       const userInfo = await getSessionUser();
+      console.log(userInfo);
+
       return {
         userInfo,
       };
