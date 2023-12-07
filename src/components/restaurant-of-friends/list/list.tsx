@@ -38,11 +38,12 @@ const useRestaurantServerData = () => {
   };
 };
 
-const useSearch = (data: Restaurant[]) => {
+const useSearch = (data: Restaurant[] | undefined) => {
   const searchKeyword = useSearchKeywordStore((state) => state.searchKeyword);
-  const filteredData = data?.filter((restaurant) => {
-    return restaurant.name.toLowerCase().includes(searchKeyword.toLowerCase());
-  });
+  const filteredData =
+    data?.filter((restaurant) => {
+      return restaurant.name.toLowerCase().includes(searchKeyword.toLowerCase());
+    }) || [];
 
   return {
     filteredData,
@@ -110,7 +111,7 @@ const useAppNavigatorr = () => {
 
 const List: React.FC = () => {
   const { data, isLoading } = useRestaurantServerData();
-  const { searchKeyword, filteredData } = useSearch(data!);
+  const { searchKeyword, filteredData } = useSearch(data);
   const { onNavigate } = useAppNavigatorr();
 
   if (isLoading) {
