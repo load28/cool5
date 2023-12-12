@@ -1,8 +1,8 @@
-import useAppNavigator from '../../hooks/utilities/navigator';
+import useAppNavigator from '../../hooks/useNavigator';
 import useRestaurantServerData from './hooks/useRestauranstServerData';
 import useSearch from './hooks/useSearch';
-import List from './ui/list';
-import SearchEmpty from './ui/search-empty';
+import List from './ui/List';
+import SearchEmpty from './ui/SearchEmpty';
 
 const RestaurantOfFriends: React.FC = () => {
   const { data, isLoading } = useRestaurantServerData();

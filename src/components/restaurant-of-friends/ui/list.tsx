@@ -1,6 +1,6 @@
 import FloatButton from '../../../ui/button/float-button';
 import { Restaurant } from '../models';
-import ListItem from './list-item';
+import ListItem from './ListItem';
 
 interface ListProps {
   filteredData: Restaurant[]; // Restaurant는 필요에 따라 적절한 타입으로 변경하세요
