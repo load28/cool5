@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import { useSupabase } from '../../../pages/auth/supabase';
+import useSupabaseClient from '../../../hooks/useSupabaseClient';
 import { useUserStore } from '../../../stores/user';
-import './user-icon.scss';
+import './UserIcon.scss';
 
 const UserIcon = () => {
-  const supabase = useSupabase();
+  const supabase = useSupabaseClient();
   const navigate = useNavigate();
   const deleteUser = useUserStore((state) => state.deleteUser);
   const user = useUserStore((state) => state.user);

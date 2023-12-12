@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
+import { signInWithKaKao } from '../../hooks/supabase-auth';
 import './auth.scss';
-import { signInWithKaKao } from './supabase';
 
 const Auth = () => {
   const { data } = useQuery('OAuthLogin', () => {

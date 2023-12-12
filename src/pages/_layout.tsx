@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Navigate, Outlet, useLoaderData } from 'react-router-dom';
 import Header from '../components/header/Header';
+import { ISupabaseUser } from '../hooks/supabase-types';
 import { useUserStore } from '../stores/user';
-import { ISupabaseUser } from './auth/supabase-types';
 
 const Layout: React.FC = () => {
   const updateUser = useUserStore((state) => state.updateUser);

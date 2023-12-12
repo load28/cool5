@@ -5,7 +5,7 @@ interface Tag {
 
 export interface Restaurant {
   id: string;
-  name: string;
+  title: string;
   description: string;
   score: 1 | 2 | 3 | 4 | 5;
   tag: Tag[];

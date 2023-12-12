@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Restaurant } from '../models';
-import './list-item.scss';
+import './ListItem.scss';
 
 const ListItem: React.FC<Restaurant> = (restaurant) => {
   return (
@@ -8,7 +8,7 @@ const ListItem: React.FC<Restaurant> = (restaurant) => {
       <div className="card sm:flex-col">
         <div className="flex flex-1 lg:flex-auto flex-col min-w-0">
           <div className="text-2xl flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-gray-800 font-medium">
-            {restaurant.name}
+            {restaurant.title}
           </div>
           <div className="mt-2 text-sm text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap">
             {restaurant.description}

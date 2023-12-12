@@ -8,12 +8,14 @@ type TRouteInfo<T, Q> = {
 
 type TFeedListRoute = TRouteInfo<'feedList', {}>;
 type TCreateShareRoute = TRouteInfo<'createShare', {}>;
+type TLoginRoute = TRouteInfo<'login', {}>;
 
-type TNavigationAction = TFeedListRoute | TCreateShareRoute;
+type TNavigationAction = TFeedListRoute | TCreateShareRoute | TLoginRoute;
 
 const NAVIGATION_ACTIONS: Record<TNavigationAction['type'], string> = {
   feedList: '/feed/list',
   createShare: '/feed/create_share',
+  login: '/login',
 };
 
 const useAppNavigator = () => {

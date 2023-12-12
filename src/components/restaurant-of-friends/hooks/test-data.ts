@@ -16,7 +16,7 @@ export const list = Array.from({ length: listLength }, (_, index) => {
   // Restaurant 객체 생성
   const restaurant: Restaurant = {
     id: index.toString(),
-    name,
+    title: name,
     description,
     score,
     tag,
