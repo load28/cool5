@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Navigate, Outlet, useLoaderData } from 'react-router-dom';
-import Header from '../components/restaurant-of-friends/header/header';
+import Header from '../components/header/header';
 import { useUserStore } from '../stores/user';
 import { ISupabaseUser } from './auth/supabase-types';
 

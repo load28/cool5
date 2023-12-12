@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
+import { Restaurant } from '../models';
 import './list-item.scss';
-
-import { Restaurant } from './list.tsx';
 
 const ListItem: React.FC<Restaurant> = (restaurant) => {
   return (

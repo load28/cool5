@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { Restaurant } from './list/list.tsx';
+import { Restaurant } from '../models';
 
 const listLength = faker.number.int({ min: 30, max: 50 }); // 배열의 길이를 10으로 고정
 
