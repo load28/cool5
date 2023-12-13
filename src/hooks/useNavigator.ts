@@ -13,7 +13,7 @@ type TLoginRoute = TRouteInfo<'login', {}>;
 type TNavigationAction = TFeedListRoute | TCreateShareRoute | TLoginRoute;
 
 const NAVIGATION_ACTIONS: Record<TNavigationAction['type'], string> = {
-  feedList: '/feed/list',
+  feedList: '/feed',
   createShare: '/feed/create_share',
   login: '/login',
 };

@@ -1,23 +1,24 @@
-import React, { useEffect } from 'react';
-import { Navigate, Outlet, useLoaderData } from 'react-router-dom';
+import React from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
 import Header from '../components/header/Header';
-import { ISupabaseUser } from '../hooks/supabase-types';
 import { useUserStore } from '../stores/user';
 
 const Layout: React.FC = () => {
-  const updateUser = useUserStore((state) => state.updateUser);
-  const { userInfo } = useLoaderData() as { userInfo: ISupabaseUser };
+  // const updateUser = useUserStore((state) => state.updateUser);
+  const userInfo = useUserStore((state) => state.user);
 
-  useEffect(() => {
-    if (userInfo) {
-      updateUser({
-        id: userInfo.id,
-        email: userInfo.email,
-        name: userInfo.user_metadata.full_name,
-        profileImageUrl: userInfo.user_metadata.avatar_url,
-      });
-    }
-  }, [userInfo]);
+  // useEffect(() => {
+  //   console.log('userInfo', userInfo);
+
+  //   if (userInfo) {
+  //     updateUser({
+  //       id: userInfo.id,
+  //       email: userInfo.email,
+  //       name: userInfo.user_metadata.full_name,
+  //       profileImageUrl: userInfo.user_metadata.avatar_url,
+  //     });
+  //   }
+  // }, [userInfo]);
 
   if (!userInfo) {
     return <Navigate to={'/login'} />;

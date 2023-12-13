@@ -14,7 +14,7 @@ async function signInWithKaKao(): Promise<OAuthResponse> {
   return await supabase.auth.signInWithOAuth({
     provider: 'kakao',
     options: {
-      redirectTo: '/auth/callback',
+      redirectTo: 'http://localhost:5173/auth/callback',
     },
   });
 }

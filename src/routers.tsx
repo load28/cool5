@@ -1,5 +1,5 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
-import { getSessionUser } from './hooks/supabase-auth.ts';
+import Callback from './components/callback/Callback.tsx';
 import GlobalLayout from './pages/_layout';
 import AuthIndex from './pages/auth/index.tsx';
 import CreateShare from './pages/create-share/index.tsx';
@@ -10,12 +10,6 @@ import RestaurantOfFriendsIndex from './pages/restaurant-of-friends/index.tsx';
 export const routes = createBrowserRouter([
   {
     path: '/',
-    loader: async () => {
-      const userInfo = await getSessionUser();
-      return {
-        userInfo,
-      };
-    },
     element: <GlobalLayout />,
     children: [
       {
@@ -47,7 +41,7 @@ export const routes = createBrowserRouter([
   },
   {
     path: '/auth/callback',
-    element: <Navigate to={'/'} />,
+    element: <Callback />,
   },
 ]);
 
