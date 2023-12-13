@@ -1,27 +1,13 @@
 import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from '../components/header/Header';
-import { useUserStore } from '../stores/user';
+import { useInitializer } from '../hooks/useInitializer';
 
 const Layout: React.FC = () => {
-  // const updateUser = useUserStore((state) => state.updateUser);
-  const userInfo = useUserStore((state) => state.user);
+  const isInitialized = useInitializer();
 
-  // useEffect(() => {
-  //   console.log('userInfo', userInfo);
-
-  //   if (userInfo) {
-  //     updateUser({
-  //       id: userInfo.id,
-  //       email: userInfo.email,
-  //       name: userInfo.user_metadata.full_name,
-  //       profileImageUrl: userInfo.user_metadata.avatar_url,
-  //     });
-  //   }
-  // }, [userInfo]);
-
-  if (!userInfo) {
-    return <Navigate to={'/login'} />;
+  if (!isInitialized) {
+    return <div>loading...</div>;
   }
 
   return (
