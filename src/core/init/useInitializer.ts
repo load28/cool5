@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useUser } from './useUser';
+import { useUser } from '../../hooks/useUser';
 
 export const useInitializer = () => {
   const user = useUser();

@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
-import { useUserStore } from '../stores/user';
-import { getSessionUser } from './supabase-auth';
-import useAppNavigator from './useNavigator';
+import useAppNavigator from '../core/navigator/useNavigator';
+import { useUserStore } from '../core/stores/user';
+import { getSessionUser } from '../core/supabase/supabase-auth';
 
 export const useUser = () => {
   const { onNavigate } = useAppNavigator();

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import useHTMLElementId from '../../hooks/useHTMLElementId';
-import { useUserStore } from '../../stores/user';
+import { useUser } from '../../hooks/useUser';
+import useHTMLElementId from '../../utils/useHTMLElementId';
 
 type CreateShareParams = {
   title: string;
@@ -17,7 +17,7 @@ const CreateShare: React.FC = () => {
   const scoreId = `${id}-score`;
   const tagId = `${id}-tag`;
 
-  const currentUserId = useUserStore((state) => state.user?.id);
+  const currentUserId = useUser();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [score, setScore] = useState(0);
@@ -41,7 +41,7 @@ const CreateShare: React.FC = () => {
       description,
       score,
       tag: [tag],
-      authorId: currentUserId!,
+      authorId: currentUserId,
     };
     console.log(params);
   };

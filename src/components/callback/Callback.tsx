@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import useAppNavigator from '../../hooks/useNavigator';
+import useAppNavigator from '../../core/navigator/useNavigator';
 import { useUser } from '../../hooks/useUser';
 
 const callback = () => {

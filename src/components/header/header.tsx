@@ -1,4 +1,4 @@
-import { useSearchKeywordStore } from '../../stores/search-keyword';
+import { useSearchKeywordStore } from '../../core/stores/search-keyword';
 import './Header.scss';
 import UserIcon from './ui/UserIcon';
 

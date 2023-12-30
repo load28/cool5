@@ -1,13 +1,13 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/header/Header';
-import { useInitializer } from '../hooks/useInitializer';
+import { useInitializer } from '../core/init/useInitializer';
 
 const Layout: React.FC = () => {
   const isInitialized = useInitializer();
 
   if (!isInitialized) {
-    return <div>loading...</div>;
+    return <></>;
   }
 
   return (
