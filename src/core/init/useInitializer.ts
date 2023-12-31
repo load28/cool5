@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useUser } from '../../hooks/useUser';
+import useUserInit from './useUserInit';
 
 export const useInitializer = () => {
-  const user = useUser();
   const [isInitialized, setIsInitialized] = useState(false);
+  const user = useUserInit();
 
   useEffect(() => {
     if (user) {

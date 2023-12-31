@@ -1,16 +1,18 @@
 import { useEffect } from 'react';
 import useAppNavigator from '../../core/navigator/useNavigator';
-import { useUser } from '../../hooks/useUser';
+import useSupabaseClient from '../../core/supabase/useSupabaseClient';
 
 const callback = () => {
-  const userInfo = useUser();
+  const supabase = useSupabaseClient();
   const { onNavigate } = useAppNavigator();
 
   useEffect(() => {
-    if (userInfo) {
-      onNavigate({ type: 'feedList', queryString: {} });
-    }
-  }, [userInfo]);
+    supabase.auth.onAuthStateChange((event) => {
+      if (event === 'SIGNED_IN') {
+        onNavigate({ type: 'root', queryString: {} });
+      }
+    });
+  }, []);
 
   return <></>;
 };

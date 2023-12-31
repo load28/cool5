@@ -6,13 +6,15 @@ type TRouteInfo<T, Q> = {
   queryString: Q;
 };
 
+type TRooteRoute = TRouteInfo<'root', {}>;
 type TFeedListRoute = TRouteInfo<'feedList', {}>;
 type TCreateShareRoute = TRouteInfo<'createShare', {}>;
 type TLoginRoute = TRouteInfo<'login', {}>;
 
-type TNavigationAction = TFeedListRoute | TCreateShareRoute | TLoginRoute;
+type TNavigationAction = TFeedListRoute | TCreateShareRoute | TLoginRoute | TRooteRoute;
 
 const NAVIGATION_ACTIONS: Record<TNavigationAction['type'], string> = {
+  root: '/',
   feedList: '/feed',
   createShare: '/feed/create_share',
   login: '/login',

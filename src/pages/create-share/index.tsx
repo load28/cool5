@@ -17,7 +17,7 @@ const CreateShare: React.FC = () => {
   const scoreId = `${id}-score`;
   const tagId = `${id}-tag`;
 
-  const currentUserId = useUser();
+  const { id: currentUserId } = useUser();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [score, setScore] = useState(0);
