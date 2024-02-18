@@ -1,6 +1,6 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 import Callback from './components/callback/Callback.tsx';
-import GlobalLayout from './pages/_layout';
+import GlobalLayout from './pages/_layout.tsx';
 import AuthIndex from './pages/auth/index.tsx';
 import CreateShare from './pages/create-share/index.tsx';
 import LoginIndex from './pages/login/index.tsx';

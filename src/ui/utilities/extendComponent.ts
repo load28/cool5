@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { appendFunction } from './appendFunction';
+import { appendFunction } from './appendFunction.ts';
 
 export function extendComponent<T extends React.Component>(parent: T, methods: { [key in keyof T]?: T[key] }): void {
   for (let name in methods) {

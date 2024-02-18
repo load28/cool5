@@ -1,5 +1,5 @@
 import { Stylesheet } from '@fluentui/merge-styles';
-import { getWindow } from './getWindow';
+import { getWindow } from './getWindow.ts';
 
 const CURRENT_ID_PROPERTY = '__currentId__';
 const DEFAULT_ID_STRING = 'id__';

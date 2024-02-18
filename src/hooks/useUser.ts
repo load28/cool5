@@ -1,4 +1,4 @@
-import { User, useUserStore } from '../core/stores/user';
+import { User, useUserStore } from '../core/stores/user.ts';
 
 export const useUser = (): User => {
   const userInfo = useUserStore((state) => state.user);

@@ -1,4 +1,4 @@
-import { canUseDOM } from './canUseDom';
+import { canUseDOM } from './canUseDom.ts';
 
 let _window: Window | undefined = undefined;
 

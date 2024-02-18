@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from '../components/header/Header';
-import { useInitializer } from '../core/init/useInitializer';
+import Header from '../components/header/Header.tsx';
+import { useInitializer } from '../core/init/useInitializer.ts';
 
 const Layout: React.FC = () => {
   const isInitialized = useInitializer();

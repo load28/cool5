@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { signInWithKaKao } from '../../core/supabase/supabase-auth';
+import { signInWithKaKao } from '../../core/supabase/supabase-auth.ts';
 import './auth.scss';
 
 const Auth = () => {

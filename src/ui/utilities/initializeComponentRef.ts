@@ -1,5 +1,5 @@
-import { IBaseButtonProps } from '../button';
-import { extendComponent } from './extendComponent';
+import { IBaseButtonProps } from '../button/index.ts';
+import { extendComponent } from './extendComponent.ts';
 
 export function initializeComponentRef<TProps extends IBaseButtonProps, TState>(obj: React.Component<TProps, TState>): void {
   extendComponent(obj, {

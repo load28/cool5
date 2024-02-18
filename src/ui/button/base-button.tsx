@@ -1,8 +1,8 @@
 import React from 'react';
-import { createMergedRef } from '../utilities/createMergedRef';
-import { getId } from '../utilities/getId';
-import { initializeComponentRef } from '../utilities/initializeComponentRef';
-import { IButtonProps } from './button-types';
+import { createMergedRef } from '../utilities/createMergedRef.ts';
+import { getId } from '../utilities/getId.ts';
+import { initializeComponentRef } from '../utilities/initializeComponentRef.ts';
+import { IButtonProps } from './button-types.ts';
 
 export interface IBaseButtonProps extends IButtonProps {
   baseClassName?: string;
@@ -39,6 +39,19 @@ class BaseButton extends React.Component<IBaseButtonProps> {
   private _ariaDescriptionId: string | undefined = undefined;
   private _processingTouch: boolean | undefined = undefined;
   private _lastTouchTimeoutId: number | undefined = undefined;
+  props: {
+    ariaDescription: any;
+    ariaLabel: any;
+    ariaHidden: any;
+    className: any;
+    disabled: any;
+    primaryDisabled: any;
+    href: any;
+    checked: any;
+    variantClassName: any;
+    toggle: any;
+    text: any;
+  };
 
   constructor(props: IBaseButtonProps) {
     super(props);

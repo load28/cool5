@@ -1,4 +1,4 @@
-import { arraysEqual } from './arrays-equal';
+import { arraysEqual } from './arrays-equal.ts';
 
 type LocalState<TType, TValue> = {
   refs: (React.Ref<TType | TValue | null> | undefined)[];
