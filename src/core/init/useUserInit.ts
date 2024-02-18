@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
-import useAppNavigator from '../navigator/useNavigator';
-import { useUserStore } from '../stores/user';
-import { getSessionUser } from '../supabase/supabase-auth';
+import useAppNavigator from '../navigator/useNavigator.ts';
+import { useUserStore } from '../stores/user.ts';
+import { getSessionUser } from '../supabase/supabase-auth.ts';
 
 const useUserInit = () => {
   const { onNavigate } = useAppNavigator();

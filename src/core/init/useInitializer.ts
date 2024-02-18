@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import useUserInit from './useUserInit';
+import useUserInit from './useUserInit.ts';
 
 export const useInitializer = () => {
   const [isInitialized, setIsInitialized] = useState(false);

@@ -1,6 +1,6 @@
 import { OAuthResponse } from '@supabase/supabase-js';
-import { ISupabaseUser } from './supabase-types';
-import useSupabaseClient from './useSupabaseClient';
+import { ISupabaseUser } from './supabase-types.ts';
+import useSupabaseClient from './useSupabaseClient.ts';
 
 async function getSessionUser(): Promise<ISupabaseUser | undefined> {
   const supabase = useSupabaseClient();

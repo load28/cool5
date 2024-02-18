@@ -1,4 +1,4 @@
-import useSupabaseClient from './useSupabaseClient';
+import useSupabaseClient from './useSupabaseClient.ts';
 
 const useSupabaseQuery = () => {
   const supabase = useSupabaseClient();
