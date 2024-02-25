@@ -1,10 +1,10 @@
-import react from 'npm:@vitejs/plugin-react@4.2.1';
 import { defineConfig } from 'vite';
+import react from 'vite-react-plugin';
 
-import type {} from 'npm:@types/react@^18.2';
-import 'npm:react-dom@^18.2/client';
-import 'npm:react-router-dom@^6.4';
-import 'npm:react@^18.2';
+import 'https://esm.sh/react-dom@18.2.0/client';
+import 'https://esm.sh/react-router-dom@6.4.5';
+import 'https://esm.sh/react@18.2.0';
+import type {} from 'https://esm.sh/v135/@types/react@18.2.38/index.d.ts';
 
 // https://vitejs.dev/config/
 export default defineConfig({

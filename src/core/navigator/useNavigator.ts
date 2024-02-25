@@ -20,11 +20,11 @@ const NAVIGATION_ACTIONS: Record<TNavigationAction['type'], string> = {
   login: '/login',
 };
 
-const useAppNavigator = () => {
+const useAppNavigator = (): { onNavigate: (p: TNavigationAction) => void; getQueryString: () => any } => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const onNavigate = useCallback(
+  const onNavigate: (p: TNavigationAction) => void = useCallback(
     ({ type, queryString: data }: TNavigationAction) => {
       const path = NAVIGATION_ACTIONS[type];
       if (!data) {

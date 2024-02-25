@@ -6,9 +6,8 @@
     "serve": "deno run --allow-net --allow-read https://deno.land/std@0.157.0/http/file_server.ts dist/"
   },
   "imports": {
-    "lodash": "npm:lodash@^4.17",
-    "vite": "npm:vite@4.5.0",
-    "vite-react-plugin": "npm:@vitejs/plugin-react@4.2.1"
+    "vite-react-plugin": "npm:@vitejs/plugin-react@4.2.1",
+    "vite": "npm:vite@4.5.0"
   },
   "compilerOptions": {
     "jsx": "react-jsx"
