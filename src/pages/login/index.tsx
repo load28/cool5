@@ -20,7 +20,7 @@ const LoginIndex: React.FC = () => {
   return (
     <div className="login-page">
       <button className="kakao-login-btn" onClick={loginHandelder}>
-        Kakao login~
+        Kakao login
       </button>
     </div>
   );
