@@ -1,6 +1,6 @@
-import { useSearchKeywordStore } from '../../core/stores/search-keyword';
+import { useSearchKeywordStore } from '../../core/stores/search-keyword.ts';
 import './Header.scss';
-import UserIcon from './ui/UserIcon';
+import UserIcon from './ui/UserIcon.tsx';
 
 interface HeaderProps {}
 
