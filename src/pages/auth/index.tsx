@@ -9,7 +9,7 @@ const Auth = () => {
 
   return (
     <div className="auth-page">
-      <div> {data?.data.provider} 로그인 중</div>
+      <div> {data?.data.provider} 로그인 중!</div>
     </div>
   );
 };
