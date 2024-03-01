@@ -13,9 +13,7 @@ const Layout: React.FC = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="sm:max-w-4xl px-6 w-full bg-white">
-        <header>
-          <Header></Header>
-        </header>
+        <Header></Header>
         <div className="mt-4 lg:mt-16"></div>
         <div className="mt-4 lg:mt-16 sh-content">
           <Outlet />
