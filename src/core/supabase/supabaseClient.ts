@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 
-const useSupabaseClient = (() => {
+const supabaseClient = (() => {
   let client: ReturnType<typeof createClient>;
 
   return () => {
@@ -15,4 +15,4 @@ const useSupabaseClient = (() => {
   };
 })();
 
-export default useSupabaseClient;
+export default supabaseClient;

@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import { useUserStore } from '../../../core/stores/user';
-import useSupabaseClient from '../../../core/supabase/useSupabaseClient';
+import supabaseClient from '../../../core/supabase/supabaseClient.ts';
 import './UserIcon.scss';
 
 const UserIcon = () => {
-  const supabase = useSupabaseClient();
+  const supabase = supabaseClient();
   const navigate = useNavigate();
   const deleteUser = useUserStore((state) => state.deleteUser);
   const user = useUserStore((state) => state.user);

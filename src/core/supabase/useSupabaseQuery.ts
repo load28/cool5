@@ -1,7 +1,7 @@
-import useSupabaseClient from './useSupabaseClient';
+import supabaseClient from './supabaseClient.ts';
 
 const useSupabaseQuery = () => {
-  const supabase = useSupabaseClient();
+  const supabase = supabaseClient();
   supabase
     .from('post')
     .select('*')

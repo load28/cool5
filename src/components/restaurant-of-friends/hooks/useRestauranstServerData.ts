@@ -1,10 +1,10 @@
 import { useQuery } from 'react-query';
 import { QueryKeys } from '../../../core/query/query-client';
-import useSupabaseClient from '../../../core/supabase/useSupabaseClient';
+import supabaseClient from '../../../core/supabase/supabaseClient.ts';
 import { Restaurant } from '../models';
 
 const useRestaurantServerData = () => {
-  const supabase = useSupabaseClient();
+  const supabase = supabaseClient();
   const { data, isLoading } = useQuery<Restaurant[]>(QueryKeys.RESTAURANTS, async () => {
     const { data, error } = (await supabase.from('post').select('*')) as {
       data: { id: string; title: string; description: string; author_id: string; score: number }[];
