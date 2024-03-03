@@ -4,7 +4,7 @@ export const useUser = (): User => {
   const userInfo = useUserStore((state) => state.user);
 
   if (!userGuard(userInfo)) {
-    throw new Error('User is not initialized');
+    throw new InitializeError();
   }
 
   return userInfo;
@@ -13,3 +13,9 @@ export const useUser = (): User => {
 const userGuard = (user: User | undefined): user is User => {
   return !!user;
 };
+
+class InitializeError extends Error {
+  constructor() {
+    super('User is not initialized');
+  }
+}
