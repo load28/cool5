@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useUserStore } from '../../core/stores/user';
+import { useUserStore } from '@core/stores/user';
 import './login.scss';
 
 const LoginIndex: React.FC = () => {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useUser } from '../../hooks/useUser';
+import { useUser } from '@hooks/useUser';
 import useHTMLElementId from '../../utils/useHTMLElementId';
 
 type CreateShareParams = {

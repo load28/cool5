@@ -29,10 +29,16 @@
         "components/*"
       ],
       "@pages/*": [
-        "pages/**/*"
+        "pages/*"
       ],
       "@core/*": [
         "core/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@ui/*": [
+        "ui/*"
       ]
     }
   },

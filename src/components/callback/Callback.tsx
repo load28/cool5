@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import useAppNavigator from '../../core/navigator/useNavigator';
-import supabaseClient from '../../core/supabase/supabaseClient.ts';
+import useAppNavigator from '@core/navigator/useNavigator';
+import supabaseClient from '@core/supabase/supabaseClient';
 
-const callback = () => {
+const Callback = () => {
   const supabase = supabaseClient();
   const { onNavigate } = useAppNavigator();
 
@@ -17,4 +17,4 @@ const callback = () => {
   return <></>;
 };
 
-export default callback;
+export default Callback;

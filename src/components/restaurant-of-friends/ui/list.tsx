@@ -1,4 +1,4 @@
-import FloatButton from '../../../ui/button/float-button';
+import FloatButton from '@ui/button/float-button';
 import { Restaurant } from '../models';
 import ListItem from './ListItem';
 

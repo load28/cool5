@@ -1,4 +1,4 @@
-import { useSearchKeywordStore } from '../../core/stores/search-keyword';
+import { useSearchKeywordStore } from '@core/stores/search-keyword';
 import './Header.scss';
 import UserIcon from './ui/UserIcon';
 
@@ -7,7 +7,7 @@ interface HeaderProps {}
 const Header: React.FC<HeaderProps> = () => {
   const updateSearchKeyword = useSearchKeywordStore((state) => state.updateSearchKeyword);
 
-  const onKeyworkdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onKeywordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     updateSearchKeyword(e.target.value);
   };
 
@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = () => {
         <span className="text-left text-4xl tracking-tight color-gray-700 lg:leading-8">Share place</span>
         <div className="flex items-center gap-x-4">
           <span className="input-wrap w-full lg:max-w-fit">
-            <input placeholder="search" onChange={onKeyworkdChange} />
+            <input placeholder="search" onChange={onKeywordChange} />
           </span>
           <UserIcon />
         </div>

@@ -1,5 +1,5 @@
-import useAppNavigator from '../../core/navigator/useNavigator';
-import useRestaurantServerData from './hooks/useRestauranstServerData';
+import useAppNavigator from '@core/navigator/useNavigator';
+import useRestaurantServerData from '@components/restaurant-of-friends/hooks/useRestauranstServerData';
 import useSearch from './hooks/useSearch';
 import List from './ui/List';
 import SearchEmpty from './ui/SearchEmpty';

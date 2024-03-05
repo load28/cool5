@@ -1,7 +1,7 @@
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RouterProvider } from 'react-router-dom';
-import { getClient } from './core/query/query-client.ts';
+import { getClient } from '@core/query/query-client.ts';
 import { routes } from './routers.tsx';
 
 const App = () => {

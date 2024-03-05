@@ -1,4 +1,4 @@
-import { useSearchKeywordStore } from '../../../core/stores/search-keyword';
+import { useSearchKeywordStore } from '@core/stores/search-keyword';
 import { Restaurant } from '../models';
 
 const useSearch = (data: Restaurant[] | undefined) => {

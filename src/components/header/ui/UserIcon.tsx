@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { useUserStore } from '../../../core/stores/user';
-import supabaseClient from '../../../core/supabase/supabaseClient.ts';
+import { useUserStore } from '@core/stores/user';
+import supabaseClient from '@core/supabase/supabaseClient';
 import './UserIcon.scss';
 
 const UserIcon = () => {

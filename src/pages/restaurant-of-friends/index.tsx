@@ -1,4 +1,4 @@
-import RestaurantOfFriends from '../../components/restaurant-of-friends/RestaurantOfFriends.tsx';
+import RestaurantOfFriends from '@components/restaurant-of-friends/RestaurantOfFriends';
 
 const RestaurantOfFriendsIndex = () => {
   return <RestaurantOfFriends></RestaurantOfFriends>;

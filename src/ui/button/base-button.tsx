@@ -1,7 +1,7 @@
 import React from 'react';
-import { createMergedRef } from '../utilities/createMergedRef';
-import { getId } from '../utilities/getId';
-import { initializeComponentRef } from '../utilities/initializeComponentRef';
+import { createMergedRef } from '@ui/utilities/createMergedRef';
+import { getId } from '@ui/utilities/getId';
+import { initializeComponentRef } from '@ui/utilities/initializeComponentRef';
 import { IButtonProps } from './button-types';
 
 export interface IBaseButtonProps extends IButtonProps {

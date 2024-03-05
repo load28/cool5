@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
-import { QueryKeys } from '../../../core/query/query-client';
-import supabaseClient from '../../../core/supabase/supabaseClient.ts';
+import { QueryKeys } from '@core/query/query-client';
+import supabaseClient from '@core/supabase/supabaseClient';
 import { Restaurant } from '../models';
 
 const useRestaurantServerData = () => {

@@ -1,11 +1,11 @@
-import { Navigate, createBrowserRouter } from 'react-router-dom';
-import Callback from './components/callback/Callback.tsx';
-import GlobalLayout from './pages/_layout';
-import AuthIndex from './pages/auth/index.tsx';
-import CreateShare from './pages/create-share/index.tsx';
-import LoginIndex from './pages/login/index.tsx';
-import RedstaurnatId from './pages/restaurant-of-friends/[id].tsx';
-import RestaurantOfFriendsIndex from './pages/restaurant-of-friends/index.tsx';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
+import Callback from '@components/callback/Callback.tsx';
+import GlobalLayout from '@pages/_layout';
+import AuthIndex from '@pages/auth/index.tsx';
+import CreateShare from '@pages/create-share/index.tsx';
+import LoginIndex from '@pages/login/index.tsx';
+import RedstaurnatId from '@pages/restaurant-of-friends/[id].tsx';
+import RestaurantOfFriendsIndex from '@pages/restaurant-of-friends/index.tsx';
 
 export const routes = createBrowserRouter([
   {
