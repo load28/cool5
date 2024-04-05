@@ -1,25 +1,32 @@
 import { Link } from 'react-router-dom';
 import { Restaurant } from '../models';
 import './ListItem.scss';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@components/ui/card.tsx';
+import { Star } from 'lucide-react';
+
+const MAC_SCORE = 5;
 
 const ListItem: React.FC<Restaurant> = (restaurant) => {
   return (
     <Link to={`/feed/${restaurant.id}`}>
-      <div className="card sm:flex-col">
-        <div className="flex flex-1 lg:flex-auto flex-col min-w-0">
-          <div className="text-2xl flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-gray-800 font-medium">
-            {restaurant.title}
-          </div>
-          <div className="mt-2 text-sm text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap">
-            {restaurant.description}
-          </div>
-          <div className="mt-4 text-sm text-gray-700 flex flex-wrap gap-x-2 gap-y-0">
-            {restaurant.tag.map((tag) => {
-              return <span key={tag.id}>#{tag.name}</span>;
+      <Card>
+        <CardHeader>
+          <CardTitle>{restaurant.title}</CardTitle>
+          <CardDescription className="flex gap-1">
+            {Array.from({ length: MAC_SCORE }).map((_, index) => {
+              return <Star key={index} size="16px" fill={restaurant.score >= ++index ? '#ffce4b' : '#bac3bd'} strokeWidth={0} />;
             })}
-          </div>
-        </div>
-      </div>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p>{restaurant.description}</p>
+        </CardContent>
+        <CardFooter>
+          {restaurant.tag.map((tag) => {
+            return <span key={tag.id}>#{tag.name}</span>;
+          })}
+        </CardFooter>
+      </Card>
     </Link>
   );
 };

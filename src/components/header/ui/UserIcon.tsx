@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUserStore } from '@core/stores/user';
 import supabaseClient from '@core/supabase/supabaseClient';
 import './UserIcon.scss';
+import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar.tsx';
 
 const UserIcon = () => {
   const supabase = supabaseClient();
@@ -30,7 +31,12 @@ const UserIcon = () => {
     );
   }
 
-  return <img className="user__img" alt="user" src={user.profileImageUrl} onClick={singOut} />;
+  return (
+    <Avatar onClick={singOut}>
+      <AvatarImage src={user.profileImageUrl} alt="user" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+  );
 };
 
 export default UserIcon;
