@@ -18,6 +18,7 @@ export interface IBaseButtonClassNames {
   screenReaderText?: string;
 }
 
+// refactors
 export const ButtonGlobalClassNames = {
   shButton: 'sh-Button',
   shButtonLabel: 'sh-Button-label',
