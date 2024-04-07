@@ -6,6 +6,7 @@ import CreateShare from '@pages/create-share/index.tsx';
 import LoginIndex from '@pages/login/index.tsx';
 import RedstaurnatId from '@pages/restaurant-of-friends/[id].tsx';
 import RestaurantOfFriendsIndex from '@pages/restaurant-of-friends/index.tsx';
+import Feeds from '@pages/feed/Feeds';
 
 export const routes = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const routes = createBrowserRouter([
       {
         path: '/feed/create_share',
         element: <CreateShare />,
+      },
+      {
+        path: '/feeds',
+        element: <Feeds />,
       },
     ],
   },

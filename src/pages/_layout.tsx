@@ -11,8 +11,13 @@ const Layout: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="sm:max-w-4xl px-6 w-full bg-white">
+    <div
+      className="flex flex-col items-center"
+      style={{
+        background: 'linear-gradient(to left, #ff9966, #ff5e62)',
+      }}
+    >
+      <div className="sm:max-w-4xl px-6 w-full">
         <Header></Header>
         <div className="mt-4 lg:mt-16"></div>
         <div className="mt-4 lg:mt-16 sh-content">
