@@ -23,7 +23,7 @@ const ListItem: React.FC<Restaurant> = (restaurant) => {
         </CardContent>
         <CardFooter>
           {restaurant.tag.map((tag) => {
-            return <span key={tag.id}>#{tag.name}</span>;
+            return <div key={tag.id}>#{tag.name}</div>;
           })}
         </CardFooter>
       </Card>
