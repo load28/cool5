@@ -6,10 +6,10 @@ type TRouteInfo<T, Q> = {
   queryString: Q;
 };
 
-type TRooteRoute = TRouteInfo<'root', {}>;
-type TFeedListRoute = TRouteInfo<'feedList', {}>;
-type TCreateShareRoute = TRouteInfo<'createShare', {}>;
-type TLoginRoute = TRouteInfo<'login', {}>;
+type TRooteRoute = TRouteInfo<'root', NonNullable<unknown>>;
+type TFeedListRoute = TRouteInfo<'feedList', NonNullable<unknown>>;
+type TCreateShareRoute = TRouteInfo<'createShare', NonNullable<unknown>>;
+type TLoginRoute = TRouteInfo<'login', NonNullable<unknown>>;
 
 type TNavigationAction = TFeedListRoute | TCreateShareRoute | TLoginRoute | TRooteRoute;
 
