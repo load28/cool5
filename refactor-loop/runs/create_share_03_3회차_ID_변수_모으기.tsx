@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 import { useUser } from '@hooks/useUser';
 import useHTMLElementId from '../../utils/useHTMLElementId';
 
@@ -38,7 +38,7 @@ const CreateShare: React.FC = () => {
 
   const onChangeField =
     <K extends keyof CreateShareFormState>(field: K) =>
-    (e: ChangeEvent<HTMLInputElement>) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       const raw = e.target.value;
       const value = (field === 'score' ? Number(raw) : raw) as CreateShareFormState[K];
       setForm((prev) => ({ ...prev, [field]: value }));
