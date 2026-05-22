@@ -14,8 +14,8 @@ LABEL = {
 RANDOM_RATIO = 0.05
 WEIGHT_STEP = 0.05
 REST_ROUNDS = 3
-STOP_PATIENCE = 3
-MAX_ROUNDS = 60
+STOP_PATIENCE = 5
+MAX_ROUNDS = 80
 
 
 def measure(code):
@@ -51,12 +51,36 @@ def measure(code):
     }
 
 
+PARAM_TYPES = {
+    "cart": "CartItem[]", "customer": "Customer", "coupons": "Coupon[]",
+    "config": "Config", "subtotal": "number", "discount": "number",
+    "total": "number", "afterDiscount": "number",
+}
+
+
 def fix_add_types(code):
     if "cart, customer, coupons, config" in code:
         return code.replace(
             "handleCheckout(cart, customer, coupons, config)",
             "handleCheckout(cart: CartItem[], customer: Customer, "
             "coupons: Coupon[], config: Config): number")
+
+    for m in re.finditer(r'function\s+\w+\s*\(([^)]*)\)', code):
+        params = m.group(1)
+        if not params.strip():
+            continue
+        names = [p.strip() for p in params.split(',')]
+        if all(':' in n for n in names if n):
+            continue
+        typed = []
+        for n in names:
+            if n and ':' not in n and n in PARAM_TYPES:
+                typed.append(f"{n}: {PARAM_TYPES[n]}")
+            else:
+                typed.append(n)
+        new_params = ", ".join(typed)
+        if new_params != params:
+            return code[:m.start(1)] + new_params + code[m.end(1):]
     return code
 
 
@@ -64,16 +88,17 @@ def fix_extract_consts(code):
     consts = [
         ("1.05", "ELECTRONICS_SURCHARGE"),
         ("0.07", "VIP_DISCOUNT_RATE"),
+        ("100", "PERCENT_BASE"),
         ("30000", "FREE_SHIPPING_THRESHOLD"),
         ("3000", "BASE_SHIPPING_FEE"),
         ("5000", "ISLAND_SHIPPING_FEE"),
         ("0.1", "TAX_RATE"),
     ]
     for value, name in consts:
-        if name not in code and re.search(r'[*+\-]\s*' + re.escape(value) + r'\b', code):
+        if name not in code and re.search(r'[*+\-/]\s*' + re.escape(value) + r'\b', code):
             header = f"const {name} = {value};\n"
             code = header + code
-            code = re.sub(r'([*+\-]\s*)' + re.escape(value) + r'\b',
+            code = re.sub(r'([*+\-/]\s*)' + re.escape(value) + r'\b',
                           r'\1' + name, code, count=1)
             return code
     return code
